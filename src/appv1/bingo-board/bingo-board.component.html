@@ -1,0 +1,28 @@
+<div>
+    <table class="bingo-board">
+        <tbody>
+            @for(i of numbers; track i; let row = $index){
+                <tr>
+                    @for(j of i; track j; let col = $index){
+                        <td (click)="selected($event, row, col)">{{j}}</td>
+                        
+                    }
+                    
+
+                </tr>
+                
+            }
+            
+        </tbody>
+    </table>
+    <div class="btn-container">
+        <button type="button" (click)="shuffle()">Shuffle</button>
+    </div>
+    <div>
+        <p>
+            {{'Count: '+ count}}
+        </p>
+    </div>
+    
+
+</div>
